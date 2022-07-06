@@ -19,7 +19,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/samsung/apq8084-common/apq8084-common-vendor.mk)
-
+$(call inherit-product, $(SRC_TARGET_DIR)/product/halium.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
@@ -100,7 +100,7 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
-    libbt-vendor
+  
 
 # Browser
 PRODUCT_PACKAGES += \
@@ -112,6 +112,7 @@ PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
     camera.apq8084 \
     libxml2
+    
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
@@ -146,11 +147,11 @@ PRODUCT_PACKAGES += \
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service \
-    fingerprint.apq8084
+    #fingerprint.apq8084
 
 # FlipFlap
-PRODUCT_PACKAGES += \
-    FlipFlap
+#PRODUCT_PACKAGES += \
+#    FlipFlap
 
 # Graphics
 PRODUCT_PACKAGES += \
@@ -218,7 +219,8 @@ PRODUCT_PACKAGES += \
     libOmxVdecHevc \
     libOmxVenc \
     libOmxVdpp \
-    libstagefrighthw
+    libstagefrighthw \
+    libstagefright_ccodec
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -271,8 +273,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
 
 # Snap Camera
-PRODUCT_PACKAGES += \
-    Snap
+#PRODUCT_PACKAGES += \
+#    Snap
 
 # Thermal engine
 PRODUCT_COPY_FILES += \

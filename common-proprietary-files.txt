@@ -412,7 +412,6 @@ lib/libgnustl_shared.so:vendor/lib/libgnustl_shared.so
 
 # Time services
 vendor/bin/time_daemon|c7a4af99b06bd48fa388ffc7518236ba929d4d61
--app/TimeService/TimeService.apk
 vendor/lib/libTimeService.so
 -vendor/lib/libtime_genoff.so
 
